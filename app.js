@@ -88,27 +88,27 @@ app.get('/api', (req, res) => {
 })
 
 app.get('/api/scores/2023/06', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(juneScores);
 });
 
 app.get('/api/scores/2023/05', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(mayScores);
 });
 
 app.get('/api/scores/2023/04', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(aprilScores);
 });
 
 app.get('/api/scores/2023/03', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(marchScores);
 });
 
 app.get('/api/scores/2023/02', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(februaryScores);
 });
 

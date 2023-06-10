@@ -89,9 +89,14 @@ app.get('/api', (req, res) => {
     res.send(masterOutput);
 })
 
-app.get('/api/scores/2023/06', (req, res) => {
+app.get('/api/scores/currentMonth', (req, res) => {
     // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send({ lastUpdate: updateDate, scores: juneScores });
+});
+
+app.get('/api/scores/2023/06', (req, res) => {
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.send({ scores: juneScores });
 });
 
 app.get('/api/scores/2023/05', (req, res) => {

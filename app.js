@@ -83,13 +83,15 @@ const aprilScores = calculateScore(651, 664);
 const marchScores = calculateScore(620, 633);
 const februaryScores = calculateScore(592, 605);
 
+const updateDate = "08";
+
 app.get('/api', (req, res) => {
     res.send(masterOutput);
 })
 
 app.get('/api/scores/2023/06', (req, res) => {
     // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.send(juneScores);
+    res.send({ lastUpdate: updateDate, scores: juneScores });
 });
 
 app.get('/api/scores/2023/05', (req, res) => {

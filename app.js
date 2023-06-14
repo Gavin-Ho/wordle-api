@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 
 // Read and parse the JSON file
-const data = fs.readFileSync(path.join(__dirname, '2023-06-10.json'));
+const data = fs.readFileSync(path.join(__dirname, '2023-06-13.json'));
 const json = JSON.parse(data);
 
 // Create an object to store the participants and all their wordle scores
@@ -77,13 +77,13 @@ function calculateScore(startDate, endDate) {
 }
 
 // Create an object to store the monthly scores for each participant
-const juneScores = calculateScore(712, 721);
+const juneScores = calculateScore(712, 724);
 const mayScores = calculateScore(681, 694);
 const aprilScores = calculateScore(651, 664);
 const marchScores = calculateScore(620, 633);
 const februaryScores = calculateScore(592, 605);
 
-const updateDate = "10";
+const updateDate = "13";
 
 app.get('/api', (req, res) => {
     res.send(masterOutput);

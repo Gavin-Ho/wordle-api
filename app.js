@@ -76,6 +76,7 @@ function calculateScore(startDate, endDate) {
     return sortedMonthlyScore;
 }
 
+
 // Create an object to store the monthly scores for each participant
 const juneScores = calculateScore(712, 725);
 const mayScores = calculateScore(681, 694);
@@ -83,10 +84,58 @@ const aprilScores = calculateScore(651, 664);
 const marchScores = calculateScore(620, 633);
 const februaryScores = calculateScore(592, 605);
 
+// Output an object with all the past winners
+function getMonthlyWinner(monthlyScore) {
+    const lowestScore = Math.min(...Object.values(monthlyScore));
+
+    // Filter participants with the lowest score
+    const allWinners = {};
+    for (const [participant, score] of Object.entries(monthlyScore)) {
+        if (score === lowestScore) {
+            allWinners[participant] = Math.round((score / 14) * 100) / 100;
+        }
+    }
+    return allWinners;
+}
+
+const hallOfFame = [
+    {
+        Month: "June",
+        Year: 2023,
+        Winners: getMonthlyWinner(juneScores)
+    },
+    {
+        Month: "May",
+        Year: 2023,
+        Winners: getMonthlyWinner(mayScores)
+    },
+    {
+        Month: "April",
+        Year: 2023,
+        Winners: getMonthlyWinner(aprilScores)
+    },
+    {
+        Month: "March",
+        Year: 2023,
+        Winners: getMonthlyWinner(marchScores)
+    },
+    {
+        Month: "February",
+        Year: 2023,
+        Winners: getMonthlyWinner(februaryScores)
+    }
+];
+
+
 const updateDate = "14";
 
 app.get('/api', (req, res) => {
     res.send(masterOutput);
+})
+
+app.get('/api/hall-of-fame', (req, res) => {
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.send(hallOfFame);
 })
 
 app.get('/api/scores/currentMonth', (req, res) => {

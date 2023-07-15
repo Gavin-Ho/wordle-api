@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 
 // Read and parse the JSON file
-const data = fs.readFileSync(path.join(__dirname, '2023-07-13.json')); // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const data = fs.readFileSync(path.join(__dirname, '2023-07-14.json')); // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const json = JSON.parse(data);
 
 // Create an object to store the participants and all their wordle scores
@@ -78,7 +78,7 @@ function calculateScore(startDate, endDate) {
 
 
 // Create an object to store the monthly scores for each participant
-const julyScores = calculateScore(742, 754) // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const julyScores = calculateScore(742, 755) // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const juneScores = calculateScore(712, 725);
 const mayScores = calculateScore(681, 694);
 const aprilScores = calculateScore(651, 664);
@@ -100,6 +100,11 @@ function getMonthlyWinner(monthlyScore) {
 }
 
 const hallOfFame = [
+    {
+        Month: "July",
+        Year: 2023,
+        Winners: getMonthlyWinner(julyScores)
+    },
     {
         Month: "June",
         Year: 2023,
@@ -127,7 +132,7 @@ const hallOfFame = [
     }
 ];
 
-const updateDate = "13"; // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const updateDate = "14"; // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 app.get('/api', (req, res) => {
     res.send(masterOutput);

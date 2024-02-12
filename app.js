@@ -10,8 +10,8 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 
 // Read and parse the JSON file
-const data = fs.readFileSync(path.join(__dirname, '2024-02-08.json')); // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LATEST JSON FILE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const updateDate = "08"; // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST UPDATED DATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const data = fs.readFileSync(path.join(__dirname, '2024-02-10.json')); // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LATEST JSON FILE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const updateDate = "10"; // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST UPDATED DATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const json = JSON.parse(data);
 
 // Create an object to store the participants and all their wordle scores
@@ -80,7 +80,7 @@ function calculateScore(startDate, endDate) {
 
 // Create an object to store the monthly scores for each participant
 const monthlyScores = {
-    'February2024': calculateScore(957, 964), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    'February2024': calculateScore(957, 966), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     'January2024': calculateScore(926, 939),
     'December2023': calculateScore(895, 908), 
     'November2023': calculateScore(865, 878),

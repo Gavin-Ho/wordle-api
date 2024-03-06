@@ -80,7 +80,7 @@ function calculateScore(startDate, endDate) {
 
 // Create an object to store the monthly scores for each participant
 const monthlyScores = {
-    'March2024': calculateScore(986, 991), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    'March2024': calculateScore(986, 990), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     'February2024': calculateScore(957, 985), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     'January2024': calculateScore(926, 939),
     'December2023': calculateScore(895, 908), 

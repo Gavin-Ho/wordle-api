@@ -22,8 +22,8 @@ json.messages.forEach(message => {
     const content = message.content;
 
     if (content) {
-        const matches = content.match(/Wordle (\d+) (\d\/\d)/g);
-
+        const matches = content.match(/Wordle (\d{1,3}(?:,\d{3})?) (\d\/\d)/g);
+        
         if (matches) {
             const senderName = message.sender_name;
             if (!masterOutput[senderName]) {

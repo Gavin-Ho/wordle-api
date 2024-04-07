@@ -22,7 +22,7 @@ json.messages.forEach(message => {
     const content = message.content;
 
     if (content) {
-        const matches = content.match(/Wordle (\d{1,3}(?:,\d{3})?) (\d\/\d)/g);
+        const matches = content.match(/Wordle (\d{1,4}(?:,\d{4})?) (\d\/\d)/g);
         
         if (matches) {
             const senderName = message.sender_name;
@@ -47,7 +47,7 @@ function calculateScore(startDate, endDate) {
 
         // Iterate over the messages of the participant
         messages.forEach(message => {
-            const matches = message.match(/Wordle (\d{1,3}(?:,\d{3})?) (\d\/\d)/);
+            const matches = message.match(/Wordle (\d{1,4}(?:,\d{4})?) (\d\/\d)/g);
             if (matches) {
                 const wordleNumber = parseInt(matches[1], 10);
                 const found = wordleNumbers.includes(wordleNumber);

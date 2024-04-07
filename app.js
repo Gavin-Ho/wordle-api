@@ -22,7 +22,7 @@ json.messages.forEach(message => {
     const content = message.content;
 
     if (content) {
-        const matches = content.match(/Wordle (\d{1,3}(?:,\d{3})?) (\d\/\d)/g);
+        const matches = content.match(/Wordle (\d{1,4}(?:,\d{4})?) (\d\/\d)/g);
         
         if (matches) {
             const senderName = message.sender_name;
@@ -47,7 +47,7 @@ function calculateScore(startDate, endDate) {
 
         // Iterate over the messages of the participant
         messages.forEach(message => {
-            const matches = message.match(/Wordle (\d+) (\d\/\d)/);
+            const matches = message.match(/Wordle (\d{1,4}(?:,\d{4})?) (\d\/\d)/g);
             if (matches) {
                 const wordleNumber = parseInt(matches[1], 10);
                 const found = wordleNumbers.includes(wordleNumber);
@@ -80,7 +80,7 @@ function calculateScore(startDate, endDate) {
 
 // Create an object to store the monthly scores for each participant
 const monthlyScores = {
-    'April2024': calculateScore(1017,1021), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    'April2024': calculateScore(1017, 1021), // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE TO LAST INCLUDED WORDLE NUMBER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     'March2024': calculateScore(986, 999), 
     'February2024': calculateScore(957, 985),
     'January2024': calculateScore(926, 939),
